@@ -6,6 +6,9 @@ on:
     branches:
       # Only look for this branch changes
       - main
+    paths:
+    # This means it will look for any change in the container
+    - 'packages/container/**'
     
 
 defaults:

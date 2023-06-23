@@ -8,10 +8,12 @@ import { createMemoryHistory , createBrowserHistory} from 'history'
 //Mount fucntion to start up the app
 
 // On Navigate is the function that is already in container waiting to be trigger
-const mount = (el, { onNavigate, defaultHistory }) => {
+const mount = (el, { onNavigate, defaultHistory, initialPathname }) => {
     // History created
   
-    const history = defaultHistory || createMemoryHistory()
+    const history = defaultHistory || createMemoryHistory({
+        initialEntries: [initialPathname]
+    })
 
     //Whenever the path change, this will be call.
     // It changes first in Auth and then we need it to change in Container.

@@ -6,10 +6,14 @@ const packageJson = require('../package.json')
 
 const devConfig = {
     mode: 'development',
+    output: {
+        // Same as the port. And this is to fix the problem when routes are nested.
+        publicPath: 'http://localhost:8082/'
+    },
     devServer: {
         port: 8082,
         historyApiFallback: {
-            index: '/index.html'
+            index: '/index.html',
         }
     },
     plugins: [
